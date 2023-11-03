@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Doctor List</title>
+</head>
+<body>
+    <h1>Doctor List</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="doctor : ${doctors}">
+            <td th:text="${doctor.doctorId}"></td>
+            <td th:text="${doctor.firstName} + ' ' + ${doctor.lastName}"></td>
+            <td th:text="${doctor.doctorEmail}"></td>
+            <td>
+                <form th:action="@{'/admin/doctors/delete/' + ${doctor.doctorId}}" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

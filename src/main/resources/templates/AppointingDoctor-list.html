@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Display the doctor list</title>
+</head>
+<body>
+	<h1>hello</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <br><th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="doctor : ${doctors}">
+            <td th:text="${doctor.doctorId}"></td>
+           <td th:text="${doctor.firstName}"></td>
+            <td th:text="${doctor.lastName}"></td>
+           <td th:text="${doctor.doctorEmail}"></td>
+      
+        </tr>
+        
+    </table>
+</body>
+</html>

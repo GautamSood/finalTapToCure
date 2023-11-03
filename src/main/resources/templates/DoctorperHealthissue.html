@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Choose Doctor</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 400px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container mt-5">
+
+    <h1 class="mb-4">Doctors for Ur Help:</h1>
+
+    <form action="/api/v1/healthproblems/doctors/{healthId}" method="post">
+
+        <div class="form-group">
+
+            <label for="healthProblemSelect">Select a Doctor:</label>
+
+            <select id="healthProblemSelect" name="healthProblemid" class="form-control">
+
+                <option value="">Select One</option>
+
+                <th:block th:each="doctor : ${doctors}">
+
+                    <option th:value="${doctor.doctorId}" th:text="${doctor.department.departmentName} + '-' + ${doctor.firstName} + ' ' + ${doctor.lastName} + ' - ' + ${doctor.shiftStartTime}+' / '+${doctor.shiftStartEnd}"></option>
+
+                </th:block>
+
+            </select>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

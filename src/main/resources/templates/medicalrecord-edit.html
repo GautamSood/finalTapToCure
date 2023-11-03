@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Medical Record</title>
+</head>
+<body>
+    <h1>Edit Medical Record</h1>
+    <form th:action="@{/editMedicalRecord}" th:object="${medicalRecord}" method="post">
+        <div>
+            <label for="medicalRecordDate">Date:</label>
+            <input type="date" id="medicalRecordDate" name="medicalRecordDate"
+                   th:field="*{medicalRecordDate}" required>
+        </div>
+
+        <div>
+            <label for="medicalRecordDiagnosis">Diagnosis:</label>
+            <input type="text" id="medicalRecordDiagnosis" name="medicalRecordDiagnosis"
+                   th:field="*{medicalRecordDiagnosis}" required>
+        </div>
+
+        <div>
+            <label for="medicalRecordDrugs">Prescribed Drugs:</label>
+            <input type="text" id="medicalRecordDrugs" name="medicalRecordDrugs"
+                   th:field="*{medicalRecordDrugs}" required>
+        </div>
+        
+        <div>
+			<label for="patientId">Patient ID:</label>
+			<input type="text" id="patientId" name="patientId" th:field="*{patient.patientId}" required>
+        </div>
+
+       <div>
+		   <label for="doctorId">Doctor ID:</label>
+           <input type="text" id="doctorId" name="doctorId" th:field="*{doctor.doctorId}" required>
+       </div>
+
+
+        <button type="submit">Save changes</button>
+    </form>

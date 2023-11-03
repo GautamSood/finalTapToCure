@@ -1,0 +1,269 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+     Include Bootstrap CSS 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('/loginbg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h3>Login</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs" id="loginTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="doctor-tab" data-toggle="tab" href="#doctor" role="tab" aria-controls="doctor" aria-selected="true">Doctor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="patient-tab" data-toggle="tab" href="#patient" role="tab" aria-controls="patient" aria-selected="false">Patient</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="loginTabContent">
+                             Doctor Login Tab 
+                            <div class="tab-pane fade show active" id="doctor" role="tabpanel" aria-labelledby="doctor-tab">
+                                <form id="doctor-login-form">
+                                    <div class="form-group">
+                                        <label for="doctor-username">Username:</label>
+                                        <input type="text" class="form-control" id="doctor-username" name="doctor-username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="doctor-password">Password:</label>
+                                        <input type="password" class="form-control" id="doctor-password" name="doctor-password" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </form>
+                            </div>
+                             Patient Login Tab 
+                            <div class="tab-pane fade" id="patient" role="tabpanel" aria-labelledby="patient-tab">
+                                <form id="patient-login-form">
+                                    <div class="form-group">
+                                        <label for="patient-username">Username:</label>
+                                        <input type="text" class="form-control" id="patient-username" name="patient-username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="patient-password">Password:</label>
+                                        <input type="password" class="form-control" id="patient-password" name="patient-password" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     Include Bootstrap JS and jQuery 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    .toast-right {
+        position: fixed;
+        top: 70%;
+        right: 5%;
+        width: 12rem;/* Adjust the right position as needed */
+        /*transform: translate(50%, -50%);*/
+    }
+</style>
+<body>
+    <div class="container">
+
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h3>Login</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs" id="loginTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="doctor-tab" data-toggle="tab" href="#doctor" role="tab" aria-controls="doctor" aria-selected="true">Doctor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="patient-tab" data-toggle="tab" href="#patient" role="tab" aria-controls="patient" aria-selected="false">Patient</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="loginTabContent">
+                            <!-- Doctor Login Tab -->
+                            <div class="tab-pane fade show active" id="doctor" role="tabpanel" aria-labelledby="doctor-tab">
+                                <form id="doctor-login-form">
+                                    <div class="form-group">
+                                        <label for="doctor-username">Username:</label>
+                                        <input type="text" class="form-control" id="doctor-username" name="doctor-username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="doctor-password">Password:</label>
+                                        <input type="password" class="form-control" id="doctor-password" name="doctor-password" required>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </form>
+                                <br><br>I you are new here
+                                <a href="/api/v1/createdoctor"> Sign up</a> over here!!
+                            </div>
+                            <!-- Patient Login Tab -->
+                            <div class="tab-pane fade" id="patient" role="tabpanel" aria-labelledby="patient-tab">
+                                <form id="patient-login-form">
+                                    <div class="form-group">
+                                        <label for="patient-username">Username:</label>
+                                        <input type="text" class="form-control" id="patient-username" name="patient-username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="patient-password">Password:</label>
+                                        <input type="password" class="form-control" id="patient-password" name="patient-password" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                    <br><br>I you are new here
+                                    <a href="/api/v1/createpatient"> Sign up</a> over here!!
+                                </form>
+                            </div>
+
+                            <div class="toast toast-right" id="error-toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+                                <div class="toast-header">
+                                    <strong class="mr-auto">Error</strong>
+                                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="toast-body">
+                                    <!-- Error message will be displayed here -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Handle form submission
+        $(document).ready(function() {
+            $("#doctor-login-form").submit(function(e) {
+
+                e.preventDefault();
+                var simulateError = false;
+
+                if (simulateError) {
+                    showErrorToast("Invalid username or password");
+                } else {
+                var myHeaders = new Headers();
+                myHeaders.append("Cookie", "JSESSIONID=2BAB09FC5600DD76414A577096736105");
+
+                var email = $("#doctor-username").val();
+                var password = $("#doctor-password").val();
+                var formdata = new FormData();
+                formdata.append("email", email);
+                formdata.append("password", password);
+
+                var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: formdata,
+                    redirect: 'follow'
+                };
+
+                fetch("http://localhost:8080/api/v1/auth/login_doctor", requestOptions)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        // return response.json();
+                    })
+                    .then(result => {
+                        window.location.href = "/api/v1/doctor_landing"
+                    })
+                    .catch(error => {
+                        showErrorToast("Error")
+                    });
+            }
+
+            });
+
+
+            $("#patient-login-form").submit(function(e) {
+                e.preventDefault();
+                var simulateError = false;
+
+                if (simulateError) {
+                    showErrorToast("Invalid username or password");
+                } else {
+                    var myHeaders = new Headers();
+                    myHeaders.append("Cookie", "JSESSIONID=2BAB09FC5600DD76414A577096736105");
+
+                    var email = $("#patient-username").val();
+                    var password = $("#patient-password").val();
+                    var formdata = new FormData();
+                    formdata.append("email", email);
+                    formdata.append("password", password);
+
+                    var requestOptions = {
+                        method: 'POST',
+                        headers: myHeaders,
+                        body: formdata,
+                        redirect: 'follow'
+                    };
+
+                    fetch("http://localhost:8080/api/v1/auth/login_patient", requestOptions)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            // return response.json();
+                        })
+                        .then(result => {
+                            window.location.href = "/api/v1/patient_landing";
+                        })
+                        .catch(error => {
+                            showErrorToast("Error")
+                        });
+                }
+                // Redirect to the patient's landing page
+                // window.location.href = "/api/v1/auth/doctor_landing";
+            });
+            function showErrorToast(errorMessage) {
+                // Set the error message in the toast body
+                $("#error-toast .toast-body").text("wrong email or password");
+
+                // Show the toast
+                $("#error-toast").toast('show');
+            }
+        });
+    </script>
+</body>
+</html>

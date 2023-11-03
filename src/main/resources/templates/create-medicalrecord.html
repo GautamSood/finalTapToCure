@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Medical Record</title>
+</head>
+<body>
+    <h1>Add Medical Record</h1>
+    <form th:action="@{/api/v1/create}" th:object="${medicalRecordDto}" method="post">
+        <label for="patientId">Patient ID:</label>
+        <input type="number" id="patientId" name="patientId" th:field="*{patientId}" required><br>
+
+        <label for="doctorId">Doctor ID:</label>
+        <input type="number" id="doctorId" name="doctorId" th:field="*{doctorId}" required><br>
+
+        <label for="medicalRecordDate">Date:</label>
+        <input type="date" id="medicalRecordDate" name="medicalRecordDate" th:field="*{medicalRecordDate}" required><br>
+
+        <label for="medicalRecordDiagnosis">Diagnosis:</label>
+        <input type="text" id="medicalRecordDiagnosis" name="medicalRecordDiagnosis" th:field="*{medicalRecordDiagnosis}" required><br>
+
+        <label for="medicalRecordDrugs">Prescribed Drugs:</label>
+        <input type="text" id="medicalRecordDrugs" name="medicalRecordDrugs" th:field="*{medicalRecordDrugs}" required><br>
+
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>
